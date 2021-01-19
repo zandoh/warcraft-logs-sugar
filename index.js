@@ -22,13 +22,13 @@ Client.on('message', message => {
     }
 
     const logReportId = message.embeds[0].url.split('/reports/')[1];
-    const wipefestBaseUrl = 'https://www.wipefest.gg/report/';
-    const wowAnalyzerBaseUrl = 'https://wowanalyzer.com/report/';
+    const wipefestLink = `https://www.wipefest.gg/report/${logReportId}`;
+    const wowAnalyzerLink = `https://wowanalyzer.com/report/${logReportId}`;
+    const embeddedMessage = new Discord.MessageEmbed()
+        .addFields(
+            { name: 'Wipefest: ', value: wipefestLink, inline: true },
+            { name: 'WoWAnalyzer: ', value: wowAnalyzerLink, inline: true },
+        );
 
-    if (isMessageFromWclIntegration) {
-        message.channel.send(`
-            ${wipefestBaseUrl}/${logReportId}
-            ${wowAnalyzerBaseUrl}/${logReportId}
-        `);
-    }   
+    message.channel.send(embeddedMessage);
 });
