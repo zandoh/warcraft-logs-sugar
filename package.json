@@ -1,0 +1,13 @@
+{
+  "name": "warcraft-logs-sugar",
+  "version": "1.0.0",
+  "description": "A discord bot to add additional sugar to the messages posted by warcraft logs webhook",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "discord.js": "^12.5.1",
+    "dotenv": "^8.0.0"
+  }
+}
